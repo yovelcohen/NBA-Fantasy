@@ -1,10 +1,8 @@
 import pandas as pd
 from updated_parser import AthletesJsonReader
-import updated_parser
-import numpy as np
 
 
-class Player_Stats(object):
+class PlayerStats(object):
 
     def __init__(self, end_name=None, player_stats=None, player_name=None):
         self.end_name = end_name
@@ -20,14 +18,13 @@ class Player_Stats(object):
         self.df = pars.pd_table()
 
     def get_player_stats(self):
-        print(self.df)
         self.player_name = input("enter player's name: ")
         self.end_name = self.player_name.title()
         self.player_stats = pd.DataFrame(self.df.loc[self.df.Name == '{}'.format(self.end_name)])
         return self.player_stats
 
     def get_percentile(self):
-        pass
+        print(self.df.dtypes)
 
     def sum_players_stats(self):
         player_1 = self.get_player_stats()
@@ -58,6 +55,6 @@ class Player_Stats(object):
 
 
 if __name__ == '__main__':
-    stats = Player_Stats()
+    stats = PlayerStats()
     stats.runner()
     stats.get_percentile()

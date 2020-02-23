@@ -2,9 +2,11 @@ import json
 import csv
 import requests
 
+
 def scrapeing_cat():
     try:
-        url = requests.get('http://site.api.espn.com/apis/common/v3/sports/basketball/nba/statistics/byathlete?contentorigin=espn&isqualified=true&lang=en&region=us&sort=offensive.avgPoints%3Adesc&limit=400')
+        url = requests.get(
+            'http://site.api.espn.com/apis/common/v3/sports/basketball/nba/statistics/byathlete?contentorigin=espn&isqualified=true&lang=en&region=us&sort=offensive.avgPoints%3Adesc&limit=400')
     except:
         with open('byathlete.json') as json_file:
             data = json.load(json_file)
