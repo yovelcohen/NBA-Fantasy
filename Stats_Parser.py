@@ -4,7 +4,7 @@ import urllib
 from pprint import pprint
 
 import pandas as pd
-from consts import CATEGORIES, ATHLETES, TOTALS, LEN_STATS, INDEX
+from consts import CATEGORIES, ATHLETES, TOTALS, LEN_STATS, INDEX, ATHLETE
 from utils import flatten
 
 pd.set_option('display.max_columns', 20)
@@ -24,7 +24,7 @@ class AthletesJsonReader(object):
         names = []
         players = len(self.json_data[ATHLETES])
         while INDEX < players:
-            names.append(self.json_data[ATHLETES][INDEX]['athlete']['displayName'])
+            names.append(self.json_data[ATHLETES][INDEX][ATHLETE][])
             INDEX += 1
         return names
 
