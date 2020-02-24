@@ -1,3 +1,11 @@
-lst = [[[12, 15, 0], [13, 15, 25], [14, 15, 25], [16, 16, 66], [18, 15, 55]]]
-l = [x[1] for x in lst[0]]
-print(l)
+class C:
+    count = 0
+
+    def __init__(self, a):
+        self.count += 1
+        self.a = a
+
+
+ins = [C(i) for i in range(10)]
+print(C.count)
+
